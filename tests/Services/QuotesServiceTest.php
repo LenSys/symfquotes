@@ -20,23 +20,16 @@ class QuotesServiceTest extends DatabaseDependantTestCase
     }
 
     
-    /*
-    public function testGetQuotes(): void
+    
+    public function testGetMultipleQuoteFromQuotesService(): void
     {   
-        $quote = new Quote();
-        $quote->setAuthor("albi");
-        $quote->setQuote("quote");
-        $this->entityManager->persist($quote);
-        $this->entityManager->flush();
+        $quotes = $this->quotesService->getQuotes("Albert Einstein");
 
-        // $quotes = $this->quotesService->getQuotes("Albert Einstein");
-
-        // dd($quotes);
-        $this->assertCount(1, $quotes);
+        $this->assertCount(2, $quotes);
     }
-    */
+    
 
-    public function testGetSingleQuoteFromEntity(): void
+    public function testGetSingleQuoteFromQuotesService(): void
     {
         $quote = new Quote();
         $quote->setAuthor("albi");
